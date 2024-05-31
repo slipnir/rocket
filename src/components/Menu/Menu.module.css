@@ -1,0 +1,35 @@
+.icon {
+    position: relative;
+}
+
+.icon::before {
+    content: '';
+    position: absolute;
+    background-image: url("/public/icons/arrow.svg");
+    background-position: center;
+    width: 2.438rem;
+    height: 10px;
+    background-repeat: no-repeat;
+    top: 7px;
+    left: 0;
+}
+
+.icon__fire {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+}
+
+.icon__fire:before {
+    content: '';
+    position: absolute;
+    background-image: url("/public/icons/fire.svg");
+    background-size: contain;
+    background-position: center;
+    width: 2.438rem;
+    height: 30px;
+    background-repeat: no-repeat;
+    top: 7px;
+    left: 0;
+}

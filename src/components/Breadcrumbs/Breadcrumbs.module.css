@@ -1,0 +1,9 @@
+.link::after {
+    content: '/';
+    margin-left: 0.875rem;
+    margin-right: 0.875rem;
+}
+
+.link:last-child::after {
+    display: none;
+}

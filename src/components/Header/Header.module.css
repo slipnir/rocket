@@ -1,0 +1,13 @@
+.header__container {
+    padding-top: 3.25rem;
+    padding-bottom: 2.75rem;
+}
+
+.header__container.scroll {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+}
+
+.header:has(.scroll) {
+    background-color: #00000080;
+}

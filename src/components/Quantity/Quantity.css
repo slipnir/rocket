@@ -1,0 +1,53 @@
+.quantity__minus {
+    position: absolute;
+    left: -6px;
+    top: 9px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #000000;
+    cursor: pointer;
+}
+
+.quantity__minus::before {
+    content: '';
+    background-image: url("/public/icons/minus.svg");
+    width: 11px;
+    height: 2px;
+    display: flex;
+}
+
+.quantity__minus:hover::before {
+    background-image: url("/public/icons/minus_hover.svg");
+}
+
+.quantity__plus {
+    position: absolute;
+    right: -6px;
+    top: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: #000000;
+    cursor: pointer;
+}
+
+.quantity__plus::before {
+    content: '';
+    background-image: url("/public/icons/plus.svg");
+    width: 11px;
+    height: 11px;
+    display: flex;
+}
+
+.quantity__plus:hover::before {
+    background-image: url("/public/icons/plus_hover.svg");
+}
+
+@media (width <= 768px) {
+    .quantity__minus {
+        top: 13px;
+    }
+
+    .quantity__plus {
+        top: 14px;
+    }
+}

@@ -1,0 +1,8 @@
+.item__delete {
+    width: 42px;
+    height: 42px;
+    background-image: url("/public/icons/close_red.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}

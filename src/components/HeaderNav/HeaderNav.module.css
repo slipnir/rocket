@@ -1,0 +1,19 @@
+.arrow::after {
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 6px;
+    background-image: url("/public/icons/arrow.svg");
+    background-repeat: no-repeat;
+    right: 0;
+}
+
+.fire::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-image: url("/public/icons/fire.svg");
+    background-repeat: no-repeat;
+    right: 0;
+}
