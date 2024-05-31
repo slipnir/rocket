@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BasketItem from '../BasketItem/BasketItem.jsx';
 import Breadcrumbs from "../Breadcrumbs/Breadcrumbs.jsx";
 import Result from "../Result/Result.jsx";
 
 const Basket = () => {
-    const items = [
+    const initialItems = [
         {
             id: 1,
             img: '/public/images/basket_1.jpeg',
             info: '',
             name: 'Хачапури по-аджарски',
             weight: '80',
-            price: '425',
-            sum: '425'
+            price: 425,
+            count: 1
         },
         {
             id: 2,
@@ -20,8 +20,8 @@ const Basket = () => {
             info: '',
             name: 'Ланч низкокалорийный',
             weight: '80',
-            price: '525',
-            sum: '1050'
+            price: 525,
+            count: 2
         },
         {
             id: 3,
@@ -29,8 +29,8 @@ const Basket = () => {
             info: 'Из баранины с тархуном',
             name: 'Хинкали жаренные',
             weight: '80',
-            price: '115',
-            sum: '690'
+            price: 115,
+            count: 6
         },
         {
             id: 4,
@@ -38,8 +38,8 @@ const Basket = () => {
             info: '',
             name: 'Оджахури из телятины',
             weight: '80',
-            price: '355',
-            sum: '355'
+            price: 355,
+            count: 1
         },
         {
             id: 5,
@@ -47,15 +47,32 @@ const Basket = () => {
             info: 'С бараниной',
             name: 'Долма',
             weight: '80',
-            price: '490',
-            sum: '490'
+            price: 490,
+            count: 1
         },
     ];
 
+    const [items, setItems] = useState(initialItems);
+
+    const handleIncrease = (id) => {
+        setItems(prevItems => prevItems.map(item =>
+            item.id === id ? { ...item, count: item.count + 1 } : item
+        ));
+    };
+
+    const handleDecrease = (id) => {
+        setItems(prevItems => prevItems.map(item =>
+            item.id === id && item.count > 1 ? { ...item, count: item.count - 1 } : item
+        ));
+    };
+
+    const totalItems = items.reduce((total, item) => total + item.count, 0);
+
     return (
         <div className="container pt-36 m-auto">
-            <h1 className="basket__title text-white text-4xl-m md:text-4xl mb-3">Корзина <sup className="text-yellow text-3xl-m md:text-3xl">5
-                шт</sup></h1>
+            <h1 className="basket__title text-white text-4xl-m md:text-4xl mb-3">
+                Корзина <sup className="text-yellow text-3xl-m md:text-3xl">{totalItems} шт</sup>
+            </h1>
             <Breadcrumbs/>
             <div>
                 <div className="basket__info mb-5 hidden md:flex">
@@ -75,7 +92,9 @@ const Basket = () => {
                             info={item.info}
                             weight={item.weight}
                             price={item.price}
-                            sum={item.sum}
+                            count={item.count}
+                            handleIncrease={() => handleIncrease(item.id)}
+                            handleDecrease={() => handleDecrease(item.id)}
                         />
                     ))}
                 </div>

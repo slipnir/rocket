@@ -1,17 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Quantity.css';
 
-const Quantity = () => {
-    const [count, setCount] = useState(1);
-
-    const handleIncrease = () => {
-        setCount(prevCount => prevCount + 1);
-    };
-
-    const handleDecrease = () => {
-        setCount(prevCount => (prevCount > 1 ? prevCount - 1 : prevCount));
-    };
-
+const Quantity = ({ count, handleIncrease, handleDecrease }) => {
     return (
         <div className="item__quantity quantity flex w-fit h-full items-center py-2.5 px-[1.375rem] border border-grey relative">
             <span className="quantity__minus cursor-pointer" onClick={handleDecrease}></span>
