@@ -30,24 +30,6 @@ const BasketItem = ({img, name, info, weight, price, sum}) => {
                     <div className="item__delete border border-red absolute lg:relative top-0 right-0"></div>
                 </div>
             </div>
-            {/*<div className="grid grid-cols-[22.5rem_auto] w-full">*/}
-            {/*    <div className="item__name flex flex-col min-w-[22.5rem]">*/}
-            {/*        <p className="item__text text-white text-xl">{name}</p>*/}
-            {/*        <span className="item__subtext text-grey text-lg mt-1">{info}</span>*/}
-            {/*        <span*/}
-            {/*            className="text-white text-base rounded bg-grey-dark flex self-baseline mt-1.5 py-0.5 px-1.5">{weight} г</span>*/}
-            {/*    </div>*/}
-            {/*    <div className="grid grid-cols-[252px_244px_auto_42px]">*/}
-            {/*        <div className="item__price">*/}
-            {/*            <span className="text-white text-2xl font-extrabold">{price} ₽</span>*/}
-            {/*        </div>*/}
-            {/*        <Quantity/>*/}
-            {/*        <div className="item__amount">*/}
-            {/*            <span className="text-white text-2xl font-extrabold">{sum} ₽</span>*/}
-            {/*        </div>*/}
-            {/*        <div className="item__delete border border-red"></div>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
         </div>
     );
 };

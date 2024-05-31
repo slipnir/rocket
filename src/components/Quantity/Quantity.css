@@ -42,6 +42,16 @@
     background-image: url("/public/icons/plus_hover.svg");
 }
 
+@media (width <= 1024px) {
+    .quantity__minus {
+        top: 7px;
+    }
+
+    .quantity__plus {
+        top: 8px;
+    }
+}
+
 @media (width <= 768px) {
     .quantity__minus {
         top: 13px;
